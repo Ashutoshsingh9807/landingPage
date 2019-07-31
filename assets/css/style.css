@@ -1,0 +1,105 @@
+/* 
+Here you can define all your style 
+*
+* define all global css here */
+
+* {
+    margin:0;
+    padding: 0;
+}
+/*importing the fonts */
+@font-face {
+    font-family: ubuntu;
+    src: url('../fonts/Ubuntu-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: ubuntu;
+    src: url('../fonts/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: ubuntu;
+    src: url('../fonts/Ubuntu-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: ubuntu;
+    src: url('../fonts/Ubuntu-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ubuntu', sans-serif;
+    font-size: 18px;
+}
+header, section, footer, body, nav {
+    display: block;
+}
+h1, strong, .font-weight-bold {
+    font-weight:bold;
+}
+a {
+    text-decoration:none;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+/*custom colors */
+.color-white {
+    color:#fff;
+}
+.container {
+    width: 100%;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.full-width {
+    width:100%;
+}
+
+
+/*********************
+   Header css here 
+**********************/
+.header {
+    position: absolute;
+    top:0px;
+    width: 100%;
+}
+.header .navbar .logo-wrapper {
+    display: inline-block;
+}
+.header .navbar ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+}
+
+
+
+/*********************
+   Section css here 
+**********************/
+.banner-section {
+    background-image: url('../img/header-bg.png');
+    background-size: cover;
+    background-position: center center;
+    padding-top: 204px;
+}
