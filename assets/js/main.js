@@ -1,3 +1,5 @@
-let name = 'Creating PSD to HTML';
-console.log(name);
-
+$(document).ready(function(){
+    $(".toggle-icon").click(function(){
+      $(".right-wrapper").toggleClass("show-div");
+    });
+  });
