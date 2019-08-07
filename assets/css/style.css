@@ -6,6 +6,7 @@ Here you can define all your style
 * {
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 /*importing the fonts */
 @font-face {
@@ -37,6 +38,7 @@ Here you can define all your style
 body {
     font-family: 'ubuntu', sans-serif;
     font-size: 18px;
+    box-sizing: border-box;
 }
 header, section, footer, body, nav {
     display: block;
@@ -46,9 +48,33 @@ h1, strong, .font-weight-bold {
 }
 a {
     text-decoration:none;
+    transition-duration: 0.5s;
+}
+ul {
+    list-style: none;
 }
 .text-uppercase {
     text-transform: uppercase;
+}
+.d-inline-block {
+    display: inline-block;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.btn {
+    padding: 15px 0px;
+    border-radius: 4px;
+    background-color: #fc6a42;
+    min-width:158px;
+    text-align: center;
+    font-weight:bold;
+}
+.v-top {
+    vertical-align: top;
 }
 /*custom colors */
 .color-white {
@@ -70,8 +96,31 @@ a {
     margin-right: -15px;
     margin-left: -15px;
 }
+.col, .col-12, .col-6, .col-3 {
+    padding-left:15px;
+    padding-right:15px;
+    box-sizing: border-box;
+}
+.col-12, .col {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.col-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.col-3 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
 .full-width {
     width:100%;
+}
+.position-relative {
+    position: relative;
 }
 
 
@@ -80,26 +129,218 @@ a {
 **********************/
 .header {
     position: absolute;
-    top:0px;
+    top:37px;
     width: 100%;
 }
 .header .navbar .logo-wrapper {
     display: inline-block;
+    max-width: 25%;
+    flex: 25%; 
 }
-.header .navbar ul {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction: row;
+.header .navbar-custom {
+    display: flex;
+    align-items: stretch;
 }
-
+.header .navbar .navigation {
+    max-width: 55%;
+    flex: 55%; 
+}
+.header .navbar .navigation ul li, .social-wrapper ul li, .social-wrapper ul li a {
+    display: inline-block;
+}
+.header .navbar .navigation ul li a {
+    color:#e1e1e1;
+    margin-right: 106px;
+}
+.header .navbar .navigation ul li:last-of-type a {
+    margin-right: 0px;
+}
+.header .navbar .navigation ul li a.active, .header .navbar .navigation ul li a:hover {
+    color:#fff;
+}
+.header .social-wrapper {
+    max-width: 20%;
+    flex: 20%; 
+}
+.social-wrapper ul li a {
+    margin-right: 35px;
+}
+.social-wrapper ul li:last-of-type a {
+    margin-right: 0px;
+}
 
 
 /*********************
-   Section css here 
+Banner Section css here 
 **********************/
 .banner-section {
     background-image: url('../img/header-bg.png');
     background-size: cover;
     background-position: center center;
     padding-top: 204px;
+    padding-bottom:80px;
+}
+.banner-section h1 {
+    font-size: 60px;
+    color: #fff;
+}
+.banner-section .banner-sub-heading {
+    max-width: 447px;
+    margin-top: 50px;
+}
+
+.banner-section .section-btn {
+    margin-top: 63px;
+}   
+.banner-section .section-btn .btn-features {
+    background-color: #4466c9;
+    margin-left: 10px;
+}
+.banner-section .scroll-down-btn {
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    line-height: 44px;
+    vertical-align: middle;
+    -moz-animation: bounce 3s infinite;
+	-webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+    box-shadow: 2px -4px 10px #4466c9;
+    margin-top: 20px;
+}
+.banner-section .content-section {
+    margin-top: 95px;
+}
+
+
+/*bounce animation */
+@-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      -ms-transform: translateY(-15px);
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+
+  /*************************************
+  common css for heading wrapping class 
+  **************************************/
+.heading-wrapper .heading {
+    color:#648cff;
+    font-size: 36px;
+}
+.heading-wrapper .sub-heading {
+    margin-top:33px;
+    color:#999999;
+}
+.heading-wrapper {
+    margin-bottom: 135px;
+}
+
+/**************************
+Features Section css here 
+**************************/
+.section-feature {
+    padding-top:133px;
+}
+.section-feature .feature-right-content {
+    display: inline-block;
+    width:calc(100% - 90px);
+    padding-left: 15px;
+}
+.section-feature .feature-right-content h4 {
+    color:#353854;
+    font-size:24px;
+}
+.section-feature .feature-right-content p {
+    color:#aeaeae;
+    font-size:16px;
+    font-weight: 100;
+    margin-top:22px;
+    line-height:29px;
+}
+
+/**************************
+Widget Section css here 
+**************************/
+.section-widget {
+    padding-top: 150px;
+}
+.slide-section ul li {
+    display: inline-block;
+}
+.slide-section ul li img {
+    box-shadow: 10px 16px 22px rgba(0, 0, 0, 0.13);
+}
+.slide-section ul li:nth-of-type(1) {
+float:left;
+}
+.slide-section ul li:nth-of-type(2) { 
+    transform: translate(-50%);
+    left: 50%;
+    z-index: 1;
+    top: -50px;
+    position: absolute;
+}
+.slide-section ul li:nth-of-type(3) {
+   float:right;
+}
+.slide-section ul {
+    max-width: 780px;
+    margin:0 auto;
+}
+.arrow-wrapper {
+    width:100%;
+}
+.arrow-wrapper .arrow {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+}
+.arrow-wrapper .arrow-right {
+    left:auto;
+    right:0px;
 }
