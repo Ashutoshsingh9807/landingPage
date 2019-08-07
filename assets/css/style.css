@@ -34,12 +34,15 @@ Here you can define all your style
     font-weight: bold;
     font-style: normal;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'ubuntu', sans-serif;
     font-size: 18px;
     box-sizing: border-box;
 }
+
 header, section, footer, body, nav {
     display: block;
 }
@@ -122,7 +125,13 @@ ul {
 .position-relative {
     position: relative;
 }
-
+.img-responsive {
+    max-width:100%;
+    display:block;
+}
+.pb-0 {
+    padding-bottom:0px!important;
+}
 
 /*********************
    Header css here 
@@ -132,33 +141,33 @@ ul {
     top:37px;
     width: 100%;
 }
-.header .navbar .logo-wrapper {
+.navbar .logo-wrapper {
     display: inline-block;
     max-width: 25%;
     flex: 25%; 
 }
-.header .navbar-custom {
+.navbar-custom {
     display: flex;
     align-items: stretch;
 }
-.header .navbar .navigation {
+.navbar .navigation {
     max-width: 55%;
     flex: 55%; 
 }
-.header .navbar .navigation ul li, .social-wrapper ul li, .social-wrapper ul li a {
+.navbar .navigation ul li, .social-wrapper ul li, .social-wrapper ul li a {
     display: inline-block;
 }
-.header .navbar .navigation ul li a {
+.navbar .navigation ul li a {
     color:#e1e1e1;
     margin-right: 106px;
 }
-.header .navbar .navigation ul li:last-of-type a {
+ .navbar .navigation ul li:last-of-type a {
     margin-right: 0px;
 }
-.header .navbar .navigation ul li a.active, .header .navbar .navigation ul li a:hover {
+.navbar .navigation ul li a.active, .header .navbar .navigation ul li a:hover {
     color:#fff;
 }
-.header .social-wrapper {
+ .social-wrapper {
     max-width: 20%;
     flex: 20%; 
 }
@@ -343,4 +352,139 @@ float:left;
 .arrow-wrapper .arrow-right {
     left:auto;
     right:0px;
+}
+
+/**************************
+Screenshot Section css here 
+**************************/
+.screenshot {
+    padding-top: 150px; 
+}
+.screenshot .wrapping-screenshot-content .screenshot-content h4 { 
+    font-size:34px;
+    color:#648cff;
+}
+.screenshot .wrapping-screenshot-content {
+    margin-top:122px;
+}
+.screenshot .wrapping-screenshot-content .screenshot-content {
+    margin-top:50px;
+}
+.screenshot .wrapping-screenshot-content .screenshot-content p {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #353854;
+    font-weight: lighter;
+    line-height: 39px;
+}
+.screenshot .wrapping-screenshot-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 150px;
+}
+
+
+/**************************
+Testimonial Section css here 
+**************************/
+
+.testimonial-section {
+    padding-top: 120px;
+}
+.testimonial-section .testimonial-wrapper .testimonial {
+    font-size: 24px;
+    line-height: 38px;
+    color:#353854;
+}
+.testimonial-section .testimonial-wrapper .testimonial::before {
+    content: '“';
+    color: #648cff;
+    font-size: 140px;
+    position: absolute;
+    height: 60px;
+    top: -90px;
+    left: -10px;
+    line-height: initial;
+}
+.testimonial-section .testimonial-wrapper .testimonial::after {
+    content: '“';
+    color: #648cff;
+    font-size: 140px;
+    position: absolute;
+    height: 60px;
+    bottom: -60px;
+    right: 0px;
+    transform: rotate(180deg);
+    line-height: initial;
+}
+.testimonial-section .testimonial-wrapper .testimonial footer {
+    font-size:18px;
+}
+.testimonial-section .testimonial-wrapper {
+    margin-bottom: 150px;
+}
+
+/**************************
+Download Section css here 
+**************************/
+.download-app-section {
+    background-image: url(../img/download-app.png);
+    background-size: auto;
+    background-position: calc(100% - 100px) 114px;
+    padding-top: 124px;
+    padding-bottom: 43px;
+    background-repeat: no-repeat;
+    background-color: #648cff;
+}
+.download-app-section h4 {
+    font-size:36px;
+    margin-top: 67px;
+}
+.download-app-section p {
+    margin-top: 40px;
+    font-size: 18px;
+    max-width: 374px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+/**************************
+Footer Section css here 
+**************************/
+.footer {
+    background-color: #353854;
+    padding-top:100px;
+    padding-bottom:88px;
+}
+.footer .navbar .logo-wrapper a {
+    color:#648cff;
+}
+.footer .navbar .logo-wrapper a span {
+    color:#fc6a42;
+}
+.footer .footer-bottom {
+    padding-top:50px;
+    border-top: 1px solid #45496a;
+    margin-top: 50px;
+}
+.footer .footer-bottom p {
+    color:#565b87;
+    margin-bottom:0px;
+    font-size: 16px;
+}
+.footer .back-to-top a {
+    position: absolute;
+    right: 50px;
+    bottom: 0px;
+    height: 41px;
+    width: 52px;
+    background-color: #434769;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    line-height: 40px;
+    text-align: center;
+
 }
